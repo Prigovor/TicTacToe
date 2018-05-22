@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org" th:charset="UTF-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+</head>
+<!--Only to view. Delete if unnecessary-->
+<link rel="stylesheet" type="text/css" media="all"
+      th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}"
+      href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"/>
+<!--Only to view. Delete if unnecessary-->
+
+<div th:fragment="index_page_content">
+
+    <div class="container-fluid">
+
+        <div class="row main-row">
+
+            <div class="col-md-2">
+                <div class="btn-group-vertical">
+                    <button type="button"
+                            class="btn btn-secondary new-game"
+                            data-toggle="modal"
+                            data-target="#newGame">
+                        New Game
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="list-group games-list">
+                    <button type="button" class="list-group-item list-group-item-success success">
+                        TicTacToe Games List
+                    </button>
+
+                    <!--/*@thymesVar id="dtoList" type="java.util.List"*/-->
+                    <!--/*@thymesVar id="dto" type="com.prigovor.TicTacToe.service.dto.GameDto"*/-->
+                    <div th:each="dto : ${dtoList}">
+                        <a class="list-group-item list-group-item-action" href=""
+                           th:href="@{'/game/view/' + ${dto.gameId}}">
+                            <div class="row">
+                                <div class="col-md-6 left">
+                                    <label>Game title: </label>
+                                    <span th:text="' ' + ${dto.gameTitle}"></span>
+                                </div>
+                                <div class="col-md-6 right">
+                                    <label>Game status: </label>
+                                    <span th:text="' ' + ${dto.gameStatus}"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

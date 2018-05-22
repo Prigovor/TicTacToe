@@ -1,0 +1,63 @@
+html {
+    /*background: lightgray;*/
+}
+
+.container-fluid {
+    /*background: lightgray;*/
+    alignment: center;
+}
+
+.row.main-row {
+    padding-top: 3vh;
+}
+
+.list-group.games-list {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.btn-group-vertical {
+    min-width: 100%;
+}
+
+.btn.btn-secondary.new-game {
+    min-width: 100%;
+    margin-bottom: 3vh;
+}
+
+.modal-content {
+    /*background: lightgray;*/
+
+}
+
+.row.game-board {
+    height: 20%;
+    alignment: center;
+}
+
+.btn.btn-light {
+    width: 20vh;
+    height: 20vh;
+    border: solid darkgray 0.1vh;
+    font-size: 12vh;
+}
+
+.col-md-10 {
+    height: 80vh;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+label {
+    font-size: 3vh;
+}
+
+#navHeader {
+    height: 5vh;
+}

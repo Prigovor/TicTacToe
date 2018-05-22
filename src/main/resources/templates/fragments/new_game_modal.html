@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" media="all"
+      th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}"
+      href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"/>
+
+
+<div th:fragment="new_game_modal">
+
+    <form th:method="post"
+          th:action="@{/game/newGame}">
+        <div class="modal fade"
+             id="newGame"
+             tabindex="-1"
+             role="dialog"
+             aria-labelledby="newGameLabel"
+             aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-gameTitle" id="newGameLabel">New game:</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="gameTitle" name="gameTitle" placeholder="Enter the gameTitle"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" value="upload">Create new game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

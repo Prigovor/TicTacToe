@@ -1,0 +1,82 @@
+<html xmlns:th="http://www.thymeleaf.org" th:charset="UTF-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+</head>
+<!--Only to view. Delete if unnecessary-->
+<link rel="stylesheet" type="text/css" media="all"
+      th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}"
+      href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"/>
+<!--Only to view. Delete if unnecessary-->
+
+<div th:fragment="game_page_content">
+
+    <div class="container-fluid">
+
+        <div class="row main-row">
+
+            <div class="col-md-2">
+                <button type="button"
+                        class="btn btn-secondary new-game"
+                        data-toggle="modal"
+                        data-target="#newGame">
+                    New Game
+                </button>
+                <a th:href="@{/game/saveGame}" type="button" class="btn btn-secondary new-game">
+                    Save game
+                </a>
+                <a th:href="@{'/game/deleteGame/' + ${gameId}}" type="button" class="btn btn-secondary new-game">
+                    Delete game
+                </a>
+            </div>
+
+            <div class="col-md-10">
+                <div id="gameMessage" class="alert alert-success" role="alert">Game Started!</div>
+                <div id="board" class="d-flex justify-content-center align-items-stretch">
+                    <!--/*@thymesVar id="gameDto" type="com.prigovor.TicTacToe.service.dto.GameDto"*/-->
+                    <input id="gameDto" type="hidden" name="gameDto" th:value="${gameDto}">
+                    <!--/*@thymesVar id="moveList" type="java.util.List<MoveDto>"*/-->
+                    <input type="hidden" id="moveList" name="complexGame" th:value="${moveList}">
+                    <div class="d-flex flex-column">
+                        <div class="p-0">
+                            <button id="0-0" name="0" value="0" type="button" class="btn btn-light"></button>
+                        </div>
+                        <div class="p-0">
+                            <button id="1-0" name="1" value="0" type="button" class="btn btn-light"></button>
+                        </div>
+                        <div class="p-0">
+                            <button id="2-0" name="2" value="0" type="button" class="btn btn-light"></button>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="p-0">
+                            <button id="0-1" name="0" value="1" type="button" class="btn btn-light"></button>
+                        </div>
+                        <div class="p-0">
+                            <button id="1-1" name="1" value="1" type="button" class="btn btn-light"></button>
+                        </div>
+                        <div class="p-0">
+                            <button id="2-1" name="2" value="1" type="button" class="btn btn-light"></button>
+                        </div>
+                    </div>
+                    <div  class="d-flex flex-column">
+                        <div class="p-0">
+                            <button id="0-2" name="0" value="2" type="button" class="btn btn-light"></button>
+                        </div>
+                        <div class="p-0">
+                            <button id="1-2" name="1" value="2" type="button" class="btn btn-light"></button>
+                        </div>
+                        <div class="p-0">
+                            <button id="2-2" name="2" value="2" type="button" class="btn btn-light"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</html>
